@@ -22,13 +22,22 @@ submitForm.addEventListener('submit', event => {
     }, delay);
   });
 
-  message.then(delay => {
-    console.log(`✅ Fulfilled promise in ${delay}ms`);
-    iziToast.success({
-      title: 'OK',
-      message: 'Illegal operation',
-      position: 'topRight',
+  message
+    .then(delay => {
+      console.log(`✅ Fulfilled promise in ${delay}ms`);
+      iziToast.success({
+        title: 'OK',
+        message: `Fulfilled promise in ${delay}ms`,
+        position: 'topRight',
+      });
+    })
+    .catch(delay => {
+      console.log(`❌ Rejected promise in ${delay}ms`);
+      iziToast.error({
+        title: 'Error',
+        message: 'Illegal operation',
+        position: 'topRight',
+      });
     });
-  });
   submitForm.reset();
 });
