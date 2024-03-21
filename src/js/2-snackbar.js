@@ -24,7 +24,7 @@ submitForm.addEventListener('submit', event => {
     });
 
     message.then(delay => {
-        console.lo(`✅ Fulfilled promise in ${delay}ms`);
+        console.log(`✅ Fulfilled promise in ${delay}ms`);
         iziToast.success({
             title: 'OK',
             message: 'Illegal operation',
